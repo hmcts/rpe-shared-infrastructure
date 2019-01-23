@@ -1,0 +1,17 @@
+#!groovy
+import uk.gov.hmcts.contino.Environment
+import uk.gov.hmcts.contino.Subscription
+
+//noinspection GroovyUnusedAssignment
+@Library("Infrastructure") _
+
+Environment environment = new Environment(env)
+Subscription subscription = new Subscription(env)
+
+def product = 'rpe'
+
+onMaster {
+  sharedInfrastructurePipeline(product, environment.nonProdName, subscription.nonProdName)
+  sharedInfrastructurePipeline(product, environment.demoName, subscription.nonProdName)
+  sharedInfrastructurePipeline(product, environment.prodName, subscription.prodName)
+}
