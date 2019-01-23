@@ -9,3 +9,7 @@ module "action-group" {
   email_receiver_name    = "Platform engineering alerts"
   email_receiver_address = "${var.action_group_email}"
 }
+
+output "action_group_email" {
+  value = "${var.action_group_email}"
+}
