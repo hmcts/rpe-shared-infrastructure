@@ -1,0 +1,18 @@
+#!groovy
+import uk.gov.hmcts.contino.Subscription
+
+//noinspection GroovyUnusedAssignment
+@Library("Infrastructure") _
+
+//noinspection GroovyAssignabilityCheck
+properties([
+  parameters([
+    choice(name: 'ENVIRONMENT', choices: 'saat\nsprod\nsandbox', description: 'Environment where code should be built and deployed')
+  ])
+])
+
+Subscription subscription = new Subscription(env)
+
+def product = 'rpe'
+
+sharedInfrastructurePipeline(product, params.ENVIRONMENT, subscription.nonProdName)
