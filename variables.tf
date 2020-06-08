@@ -10,10 +10,6 @@ variable "location" {
   default = "UK South"
 }
 
-variable "action_group_email" {
-  default = "hmctsplatformengineering@gmail.com"
-}
-
 variable "managed_identity_object_id" {
   default = ""
 }

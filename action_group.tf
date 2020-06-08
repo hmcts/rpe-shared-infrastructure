@@ -7,9 +7,10 @@ module "action-group" {
   action_group_name      = "RPE alerts - ${var.env}"
   short_name             = "rpe_alerts"
   email_receiver_name    = "Platform engineering alerts"
-  email_receiver_address = "${var.action_group_email}"
+  email_receiver_address = "${data.azurerm_key_vault_secret.actionGroupEmail.value}"
 }
 
-output "action_group_email" {
-  value = "${var.action_group_email}"
+data "azurerm_key_vault_secret" "actionGroupEmail" {
+  name      = "actionGroupEmail"
+  key_vault_id = "${module.key-vault.key_vault_id}"
 }
