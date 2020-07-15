@@ -20,5 +20,6 @@ module "key-vault" {
   # dcd_platformengineering group object ID
   product_group_object_id    = "c36eaede-a0ae-4967-8fed-0a02960b1370"
   common_tags                = "${var.common_tags}"
-  managed_identity_object_id = "${var.managed_identity_object_id}"
+  managed_identity_object_ids = ["${var.managed_identity_object_id}"]
+  create_managed_identity    = true
 }
