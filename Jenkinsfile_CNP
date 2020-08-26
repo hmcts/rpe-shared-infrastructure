@@ -1,7 +1,7 @@
 #!groovy
 
 //noinspection GroovyUnusedAssignment
-@Library("Infrastructure") _
+@Library("Infrastructure@docker-agent-build-default-true") _
 
 def product = 'rpe'
 
