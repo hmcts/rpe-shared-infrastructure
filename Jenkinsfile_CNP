@@ -6,5 +6,5 @@
 def product = 'rpe'
 
 withInfraPipeline(product) {
-  enableSlackNotifications('rpe-build-notices')
+  enableSlackNotifications('platops-build-notices')
 }
