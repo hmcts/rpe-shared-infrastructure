@@ -17,8 +17,8 @@ module "key-vault" {
   object_id           = var.jenkins_AAD_objectId
   resource_group_name = azurerm_resource_group.rg.name
 
-  # dcd_platformengineering group object ID
-  product_group_object_id    = "c36eaede-a0ae-4967-8fed-0a02960b1370"
+  # DTS Platform Operations group object ID
+  product_group_object_id    = "e7ea2042-4ced-45dd-8ae3-e051c6551789"
   common_tags                = var.common_tags
   create_managed_identity    = true
 }
