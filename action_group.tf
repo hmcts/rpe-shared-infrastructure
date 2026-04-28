@@ -11,6 +11,6 @@ module "action-group" {
 }
 
 data "azurerm_key_vault_secret" "actionGroupEmail" {
-  name      = "actionGroupEmail"
+  name         = "actionGroupEmail"
   key_vault_id = module.key-vault.key_vault_id
 }
