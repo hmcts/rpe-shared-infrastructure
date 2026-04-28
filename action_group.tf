@@ -14,3 +14,9 @@ data "azurerm_key_vault_secret" "actionGroupEmail" {
   name         = "actionGroupEmail"
   key_vault_id = module.key-vault.key_vault_id
 }
+
+# Migrate deprecated azurerm_template_deployment to new azurerm_resource_group_template_deployment
+moved {
+  from = module.action-group.azurerm_template_deployment.action-group
+  to   = module.action-group.azurerm_resource_group_template_deployment.action-group
+}
