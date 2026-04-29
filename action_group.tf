@@ -11,6 +11,14 @@ module "action-group" {
 }
 
 data "azurerm_key_vault_secret" "actionGroupEmail" {
-  name      = "actionGroupEmail"
+  name         = "actionGroupEmail"
   key_vault_id = module.key-vault.key_vault_id
+}
+
+removed {
+  from = module.action-group.azurerm_template_deployment.action-group
+
+  lifecycle {
+    destroy = false
+  }
 }

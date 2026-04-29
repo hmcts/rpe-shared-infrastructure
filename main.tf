@@ -1,4 +1,4 @@
-provider azurerm {
+provider "azurerm" {
   features {}
 }
 
@@ -15,7 +15,7 @@ data "azurerm_user_assigned_identity" "jenkins" {
 }
 
 module "key-vault" {
-  source              = "git@github.com:hmcts/cnp-module-key-vault?ref=azurermv2"
+  source              = "git@github.com:hmcts/cnp-module-key-vault?ref=master"
   product             = "${var.product}-shared"
   env                 = var.env
   tenant_id           = var.tenant_id
@@ -24,7 +24,7 @@ module "key-vault" {
   resource_group_name = azurerm_resource_group.rg.name
 
   # DTS Platform Operations
-  product_group_object_id    = "e7ea2042-4ced-45dd-8ae3-e051c6551789"
-  common_tags                = var.common_tags
-  create_managed_identity    = true
+  product_group_object_id = "e7ea2042-4ced-45dd-8ae3-e051c6551789"
+  common_tags             = var.common_tags
+  create_managed_identity = true
 }
