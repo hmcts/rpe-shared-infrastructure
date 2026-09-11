@@ -15,7 +15,7 @@ data "azurerm_user_assigned_identity" "jenkins" {
 }
 
 module "key-vault" {
-  source              = "git@github.com:hmcts/cnp-module-key-vault?ref=master"
+  source              = "git@github.com:hmcts/cnp-module-key-vault?ref=DTSPO-31965/remove-jenkins-ptl-access"
   product             = "${var.product}-shared"
   env                 = var.env
   tenant_id           = var.tenant_id
