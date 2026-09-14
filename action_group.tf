@@ -2,6 +2,7 @@ module "action-group" {
   source   = "git@github.com:hmcts/cnp-module-action-group"
   location = "global"
   env      = var.env
+  tags     = var.common_tags
 
   resourcegroup_name     = azurerm_resource_group.rg.name
   action_group_name      = "RPE alerts - ${var.env}"
