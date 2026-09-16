@@ -2,7 +2,7 @@
 import uk.gov.hmcts.contino.Subscription
 
 //noinspection GroovyUnusedAssignment
-@Library("Infrastructure@DTSPO-35113/master") _
+@Library("Infrastructure@2.8.0") _
 
 //noinspection GroovyAssignabilityCheck
 properties([
@@ -15,4 +15,5 @@ Subscription subscription = new Subscription(env)
 
 def product = 'rpe'
 
-sharedInfrastructurePipeline(product, params.ENVIRONMENT, subscription.nonProdName)
+withParameterizedInfraPipeline(product, params.ENVIRONMENT, subscription.nonProdName) {
+}
