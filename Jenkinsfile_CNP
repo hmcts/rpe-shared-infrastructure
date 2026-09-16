@@ -1,7 +1,7 @@
 #!groovy
 
 //noinspection GroovyUnusedAssignment
-@Library("Infrastructure@DTSPO-35113/master") _
+@Library("Infrastructure@2.8.0") _
 
 def product = 'rpe'
 
